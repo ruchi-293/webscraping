@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # IPL Player Analytics Dashboard
 
 A resume-ready **web scraping + data analytics + Flask dashboard** project.
@@ -152,3 +153,7 @@ Built an automated IPL statistics pipeline using Selenium and BeautifulSoup to c
 ## Important data note
 
 The included CSV is a small demo dataset so the dashboard works immediately after cloning. Run `python scraper.py` to replace it with the current data returned by the source website.
+=======
+# webscraping
+IPL Data Scraper – Developed a Python-based web scraping project to extract IPL match data, including teams, players, scores, results, and match details. Used BeautifulSoup/Selenium to collect and organize data for analysis.
+>>>>>>> 3dbe13170471a5ebe9672ef2708439195cc27e91
