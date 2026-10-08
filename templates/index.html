@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IPL Player Analytics</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.8/dist/chart.umd.min.js"></script>
+</head>
+<body>
+  <header class="navbar">
+    <div class="brand"><span>IPL</span> Analytics</div>
+    <a href="#insights">Insights</a>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div>
+        <p class="eyebrow">CRICKET DATA ANALYTICS</p>
+        <h1>IPL Player<br><span>Performance Dashboard</span></h1>
+        <p class="hero-text">
+          A web-scraping project that converts IPL player statistics into
+          simple, decision-ready insights.
+        </p>
+        <a class="button" href="#dashboard">Explore Dashboard</a>
+      </div>
+      <div class="hero-card">
+        <div class="cricket-ball">●</div>
+        <p>Live-ready data pipeline</p>
+        <small>Howstat → Python → CSV → Flask → Dashboard</small>
+      </div>
+    </section>
+
+    <section id="dashboard" class="dashboard">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">OVERVIEW</p>
+          <h2>Performance at a glance</h2>
+        </div>
+        <input id="search" type="search" placeholder="Search player...">
+      </div>
+
+      <div class="cards">
+        <div class="card"><small>PLAYERS</small><strong id="players">—</strong></div>
+        <div class="card"><small>TOTAL RUNS</small><strong id="runs">—</strong></div>
+        <div class="card"><small>TOP RUN SCORER</small><strong id="topRuns">—</strong></div>
+        <div class="card"><small>TOP WICKET TAKER</small><strong id="topBowler">—</strong></div>
+      </div>
+
+      <div class="grid">
+        <div class="panel chart-panel">
+          <div class="panel-title">
+            <h3>Top 10 Run Scorers</h3>
+            <span>Runs</span>
+          </div>
+          <canvas id="runsChart"></canvas>
+        </div>
+        <div class="panel chart-panel">
+          <div class="panel-title">
+            <h3>Top 10 Wicket Takers</h3>
+            <span>Wickets</span>
+          </div>
+          <canvas id="wicketsChart"></canvas>
+        </div>
+      </div>
+
+      <div id="insights" class="panel insights">
+        <div class="panel-title">
+          <h3>Useful Insights</h3>
+          <span>Data-driven</span>
+        </div>
+        <div id="insightList" class="insight-list"></div>
+      </div>
+
+      <div class="panel table-panel">
+        <div class="panel-title">
+          <h3>Player Statistics</h3>
+          <span id="rowCount"></span>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Player</th><th>Matches</th><th>Runs</th>
+                <th>Batting Avg</th><th>Wickets</th><th>Bowling Avg</th>
+              </tr>
+            </thead>
+            <tbody id="tableBody"></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>IPL Player Analytics · Python · Selenium · BeautifulSoup · Pandas · Flask</p>
+  </footer>
+
+  <script src="{{ url_for('static', filename='app.js') }}"></script>
+</body>
+</html>
